@@ -1,30 +1,8 @@
 version: "3.7"
 
 services:
-  caddy:
-    container_name: caddy
-    image: docker.io/library/caddy:2-alpine
-    network_mode: host
-    restart: unless-stopped
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile:ro
-      - caddy-data:/data:rw
-      - caddy-config:/config:rw
-    environment:
-      - SEARXNG_HOSTNAME=${SEARXNG_HOSTNAME:-http://localhost:80}
-      - SEARXNG_TLS=${LETSENCRYPT_EMAIL:-internal}
-    cap_drop:
-      - ALL
-    cap_add:
-      - NET_BIND_SERVICE
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "1m"
-        max-file: "1"
-
   redis:
-    container_name: redis
+    container_name: searxng_redis
     image: docker.io/valkey/valkey:7-alpine
     command: valkey-server --save 30 1 --loglevel warning
     restart: unless-stopped
@@ -51,7 +29,7 @@ services:
     networks:
       - searxng
     ports:
-      - "127.0.0.1:8080:8080"
+      - "7980:8080"
     volumes:
       - ./searxng:/etc/searxng:rw
     environment:
