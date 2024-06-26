@@ -1,11 +1,11 @@
-# SearXNG Docker
+# SearXNG
 ## Deploy
 
 ```sh
 git clone https://github.com/zmh-program/searxng.git
 cd searxng
 
-sed -i "s|ultrasecretkey|$(openssl rand -hex 32)|g" searxng/settings.yml // Generate the secret key
+sed -i "s|ultrasecretkey|$(openssl rand -hex 32)|g" searxng/settings.yml # Generate the secret key
 
 # Edit the [.env](https://github.com/searxng/searxng-docker/blob/master/.env) file to set the hostname and an email
 # Edit the [searxng/settings.yml](https://github.com/searxng/searxng-docker/blob/master/searxng/settings.yml) file according to your need
