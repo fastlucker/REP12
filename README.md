@@ -7,10 +7,10 @@ cd searxng
 
 sed -i "s|ultrasecretkey|$(openssl rand -hex 32)|g" searxng/settings.yml // Generate the secret key
 
-// Edit the [.env](https://github.com/searxng/searxng-docker/blob/master/.env) file to set the hostname and an email
-// Edit the [searxng/settings.yml](https://github.com/searxng/searxng-docker/blob/master/searxng/settings.yml) file according to your need
+# Edit the [.env](https://github.com/searxng/searxng-docker/blob/master/.env) file to set the hostname and an email
+# Edit the [searxng/settings.yml](https://github.com/searxng/searxng-docker/blob/master/searxng/settings.yml) file according to your need
 
-// Check everything is working: `docker compose up`
+# Check everything is working: `docker compose up`
 
 docker compose up -d
 ```
