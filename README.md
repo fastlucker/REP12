@@ -1,6 +1,8 @@
 # SearXNG
 ## Deploy
 
+- After deployment the service starts at **http://*[ip]*:7980**
+
 ```sh
 git clone https://github.com/zmh-program/searxng.git
 cd searxng
