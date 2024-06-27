@@ -1,6 +1,8 @@
 # SearXNG
 ## Deploy
 
+> For more configurations and information see 👉 **[SearXNG](https://github.com/searxng/searxng)**.
+
 - After deployment the service starts at **http://*[ip]*:7980**
 
 ```sh
