@@ -14,16 +14,16 @@ sed -i "s|ultrasecretkey|$(openssl rand -hex 32)|g" searxng/settings.yml # Gener
 # Edit the [.env](https://github.com/searxng/searxng-docker/blob/master/.env) file to set the hostname and an email
 # Edit the [searxng/settings.yml](https://github.com/searxng/searxng-docker/blob/master/searxng/settings.yml) file according to your need
 
-# Check everything is working: `docker compose up`
+# Check everything is working: `docker-compose up`
 
-docker compose up -d
+docker-compose up -d
 ```
 
 ## Update
 ```sh
 git pull
-docker compose pull
-docker compose up -d
+docker-compose pull
+docker-compose up -d
 ```
 
 ## Arch Support
